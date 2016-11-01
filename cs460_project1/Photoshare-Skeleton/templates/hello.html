@@ -1,0 +1,31 @@
+<!-- author ben lawson (balawson@bu.edu) -->
+<!doctype html>
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+<title>Photoshare</title>
+{% if name %}
+  <h1>Hello {{ name }}!</h1>
+{% endif %}
+
+{% if friendList %}
+<h2>Your friends list</h2>
+    <ul>
+    {% for friend in friendList %}
+        <li>{{friend[0]}} {{friend[1]}} 
+    {% endfor %}
+    </ul>
+{% endif %}
+
+<body>
+<ul>
+<li><a href='/albums'>Albums</a></li>
+<li><a href='/show'>Photos</a></li>
+<li><a href='/friendList'>FriendList</a></li>
+<li><a href='/photosearch'>Search photos</a></li>
+<li><a href='/tag_management'>Tag management</a></li>
+<li><a href='/userList'>User Activity</a></li>
+<li><a href='/logout'>Logout</a></li>
+<li><a href='/'>Home</a></li>
+</ul>
+</body>

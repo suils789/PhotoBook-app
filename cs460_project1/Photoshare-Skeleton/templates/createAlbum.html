@@ -1,0 +1,14 @@
+<head>
+    <title>Create an album!</title>
+</head>
+
+<body>
+    <div class="title">
+        <h1>Upload an album to Photoshare</h1>
+    </div>
+    <form method="post" enctype="multipart/form-data" action="{{ url_for('create_an_album') }}">
+        <label for="album_name">Your Album Name</label>
+        <input type="text" name="album_name" required='true' /><br />
+        <input type="submit" value="Create" />
+    </form>
+</body>

@@ -1,0 +1,14 @@
+<head>
+    <title>Tag recommendation</title>
+</head>
+
+<body>
+    <div class="title">
+        <h1>Tag recommedation</h1>
+    </div>
+    <form method="post" enctype="multipart/form-data" action="{{ url_for('tagSearch') }}">
+        <label for="tag_search">Enter Tags</label>
+        <input type="text" name="description" required='true' /><br />
+        <input type="submit" value="Search" />
+    </form>
+</body>

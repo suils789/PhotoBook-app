@@ -1,0 +1,22 @@
+<head>
+    <title>Create comments for pictures!</title>
+</head>
+
+<title>Photoshare</title>
+{% if name %}
+  <h1>Hello {{ name }}!</h1>
+{% endif %}
+
+
+<body>
+    <div class="title">
+        <h1>Comment pictures!</h1>
+    </div>
+    {% if message %}
+    <form method="post" enctype="multipart/form-data" action="{{url_for('comment')}}">
+        <label for="comment_text">Write your comment</label>
+        <input type="text" name="description" required='true' /><br />
+        <input type="submit" value="Create" />
+    </form>
+    {% endif %}
+</body>

@@ -1,0 +1,27 @@
+<head>
+    <title>Tag managements</title>
+</head>
+
+<body>
+    <div class="title">
+        <h1>Tag your photos!</h1>
+    </div>
+
+    {% if photos %}
+    <ul>
+    {% for photo in photos %}
+        <li>{{photo[2]}}<br>
+        <li><img src='data:image/png;base64, {{photo[0]}}'/></li>
+        <form method="post" enctype="multipart/form-data" action="/tag_management/add_tag?pid={{photo[1]}}">
+        <label for="add_tag">Enter a tag for this photo:</label>
+        <input type="text" name="tag" required='true' /><br />
+        <input type="submit" value="Create" />
+    </form>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+<p>View all <a href='/tag_management/allTags'>tags</a></p>
+<p>View the most <a href='/tag_management/popularTags'>popupar tags</a></p>
+<li><a href='/'>Home</a></li>
+</body>

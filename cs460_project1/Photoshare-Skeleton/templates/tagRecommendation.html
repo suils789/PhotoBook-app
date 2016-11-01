@@ -1,0 +1,25 @@
+<!doctype html>
+
+<head>
+    <title>Tags</title>
+</head>
+
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+
+
+
+{% if tags %}
+    <ul>
+    {% for tag in tags %}
+    <li>{{tag}} &nbsp &nbsp &nbsp <a href='/tag_management/allTags/viewPhoto?tag={{tag}}'>All photos with this tag</a>&nbsp &nbsp &nbsp <a href='/tag_management/allTags/viewYourPhoto?tag2={{tag}}'>Your photos with this tag</a> &nbsp &nbsp &nbsp&nbsp &nbsp  &nbsp <br>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+
+<body>
+ 	<p> back to <a href='/tag_management'>Tag management</a></p>
+ 	<li><a href='/'>Home</a></li>
+</body>

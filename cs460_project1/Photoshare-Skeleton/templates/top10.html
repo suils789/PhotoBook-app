@@ -1,0 +1,26 @@
+<!doctype html>
+
+<head>
+    <title>Top 10 users</title>
+</head>
+
+<h1>Top 10 users of PhotoShare!</h1>
+
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+
+
+
+{% if users %}
+    <ul>
+    {% for user in users %}
+    <li>{{user[1]}}, {{user[2]}} has a contribution score {{user[3]}}<br><a href='/viewProfile?uid={{user[0]}}'> Look at his/her album</a><br>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+
+<body>
+ 	<p> back to <a href='/'>Home</a></p>
+</body>

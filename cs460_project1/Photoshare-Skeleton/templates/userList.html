@@ -1,0 +1,27 @@
+<!doctype html>
+
+<head>
+    <title>Current users</title>
+</head>
+
+<h1>All current users of PhotoShare!</h1>
+
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+
+
+
+{% if users %}
+    <ul>
+    {% for user in users %}
+    <li>{{user[1]}}, {{user[2]}} <br><a href='/viewProfile?uid={{user[0]}}'> Look at his/her album</a><br>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+
+<body>
+    <p> Click here to see current  <a href='/userList/topTenUsers'>  top ten users</a> ranking by contribution score!</p>
+ 	<p> back to <a href='/'>Home</a></p>
+</body>

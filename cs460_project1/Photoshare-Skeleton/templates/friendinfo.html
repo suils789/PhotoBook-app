@@ -1,0 +1,26 @@
+<!doctype html>
+
+<head>
+    <title>friends list</title>
+</head>
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+
+
+{% if searchList %}
+<h2>Here is your friend list</h2>
+    <ul>
+    {% for people in searchList %}
+        <li>{{people[3]}} {{people[4]}}<br>
+        <li><a href='/friendProfile?info={{people[0]}}'>look at his/her profile</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+
+<body>
+<p>Want to add more friends? Click  the link below!</p>
+<li><a href='/friendsearch'>Search people</a></li>
+ 	<p> back to <a href='/profile'>profile</a></p>
+</body>

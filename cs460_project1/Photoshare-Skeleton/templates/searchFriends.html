@@ -1,0 +1,16 @@
+<!doctype html>
+<head>
+    <title>Search for a friend</title>
+</head>
+
+<body>
+    <div class="title">
+        <h1>Search for friends!</h1>
+    </div>
+    <form method="post" enctype="multipart/form-data" action="{{url_for('search_friend') }}">
+    	<label for="friend">Enter your friends name</label>
+        <input type="text" name="friend" required='true' /><br />
+        <input type="submit" value="Search" />
+    </form>
+ 	<p> back to <a href='/profile'>profile</a></p>
+</body>

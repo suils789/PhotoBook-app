@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>All comments</title>
+    {% if comments %}
+    <ul>
+        {% for comment in comments %}
+        <li>{{comment[1]}}</li>
+        {% endfor %}
+    </ul>
+  {% endif %}
+    <a href="/">Home</a>
+  </head>
+  <body>
+
+  </body>
+</html>

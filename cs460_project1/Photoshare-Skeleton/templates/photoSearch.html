@@ -1,0 +1,21 @@
+<head>
+    <title>Search for photos!</title>
+</head>
+
+
+
+
+
+<body>
+    <div class="title">
+        <h1>Search for pictures!</h1>
+    </div>
+    <form method="post" enctype="multipart/form-data" action="{{ url_for('photoSearch') }}">
+        <label for="tag_search">Enter tags to search photos</label>
+        <input type="text" name="description" required='true' /><br />
+        <input type="submit" value="Search" />
+    </form>
+</body>
+
+
+<p>Click here for <a href='/tag_management/tag_racommendation'>Tag recommendation</a></p>

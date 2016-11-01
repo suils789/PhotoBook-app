@@ -1,0 +1,15 @@
+
+<head>
+    <title>Create comments for pictures!</title>
+</head>
+
+<body>
+    <div class="title">
+        <h1>Comment pictures!</h1>
+    </div>
+    <form method="post" enctype="multipart/form-data" action="{{url_for('add_comment')}}">
+        <label for="comment_text">Write your comment</label>
+        <input type="text" name="description" required='true' /><br />
+        <input type="submit" value="Create" />
+    </form>
+</body>

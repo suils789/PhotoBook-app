@@ -1,0 +1,31 @@
+<!doctype html>
+
+<head>
+    <title>View photos</title>
+</head>
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+
+{% if photos %}
+    <ul>
+    {% for photo in photos %}
+        <li>{{photo[2]}} &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp &nbsp &nbsp&nbsp &nbsp &nbsp	
+        <a href='/tags?photoid={{photo[1]}}'>Show all tags<br>
+        <li><img src='data:image/png;base64, {{photo[0]}}'/><a href='/like?photoid={{photo[1]}}'>Like</a></li>
+        <li><a href='/howmanyLike?photoid={{photo[1]}}'>Show how many people Like this photo</a></li>
+        <form method="post" enctype="multipart/form-data" action="/add_comment?pid={{photo[1]}}">
+        <label for="comment_text">Write your comment</label>
+        <input type="text" name="description" required='true' /><br />
+        <input type="submit" value="Create" />
+    </form>
+    	<li><a href='/showComments?photoid={{photo[1]}}'>Show all comments for this photo</a></li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+
+<body>
+	<p> back to <a href='/tag_management'>Tag management</a></p>
+ 	<p> back to <a href='/'>Home</a></p>
+</body>

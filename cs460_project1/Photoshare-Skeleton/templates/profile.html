@@ -1,0 +1,32 @@
+<!doctype html>
+
+<head>
+    <title>friend profile</title>
+</head>
+{% if message %}
+  <h4>{{message}}!</h4>
+{% endif %}
+
+
+{% if profile %}
+<h2>Profile of {{profile[1]}}</h2>
+<li>first name: {{profile[3]}}</li>
+<li>last name: {{profile[4]}}</li>
+<li>date of birth: {{profile[5]}}</li>
+<li>gender: {{profile[6]}}</li>
+<li>hometown: {{profile[7]}}</li>
+{% endif %}
+
+
+{% if albums %}
+<h2>Album List</h2>
+    <ul>
+    {% for album in albums %}
+        <li>{{album[0]}} created on {{album[1]}} <a href='/photoview?name={{album[0]}}&uid={{album[2]}}'>enter</a></p>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+<body>
+ 	<p> back to <a href='/profile'>profile</a></p>
+</body>
